@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-link: #3b82f6; /* Azul brilhante para links (Light mode) */
+  --code-background: #f3f4f6; /* Fundo cinza claro para código */
+  --blockquote-border: #9ca3af; /* Cinza médio para bordas */
 }
 
 @theme inline {
@@ -16,6 +19,9 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary-link: #60a5fa; /* Azul mais claro para links (Dark mode) */
+    --code-background: #1f2937; /* Fundo cinza escuro para código */
+    --blockquote-border: #4b5563; /* Cinza escuro para bordas */
   }
 }
 
@@ -23,4 +29,164 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6; /* Melhora a leitura do texto */
+}
+
+/* --- 1. Cabeçalhos --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+h1 { font-size: 2.5rem; } /* Maior espaçamento e tamanho */
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem;}
+
+
+/* --- 2. Inputs e Elementos de Formulário --- */
+input,
+textarea { 
+  border: 1px solid var(--blockquote-border);
+  background-color: var(--code-background); 
+  color: var(--foreground);
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+/* --- 3. Tipografia Geral --- */
+p {
+  margin-bottom: 1.25em;
+}
+
+/* Links */
+a {
+  color: var(--primary-link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Ênfase */
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* --- 4. Listas (ul, ol) --- */
+ul, ol {
+  margin-bottom: 0;
+  padding-left: 1.8em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: 0;
+  list-style: disc;
+}
+
+/* --- 5. Bloco de Citação (blockquote) --- */
+blockquote {
+  border-left: 4px solid var(--blockquote-border);
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+  color: var(--blockquote-border); 
+  font-style: italic;
+}
+
+/* --- 6. Código (Inline e Bloco) --- */
+/* Código Inline */
+code {
+  background-color: var(--code-background);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+/* Blocos de Código */
+pre {
+  background-color: var(--code-background);
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+pre code {
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent; /* O bloco pre já tem o fundo */
+}
+
+/* --- Estilos para o Conteúdo Principal do Artigo --- */
+article {
+  /* 1. Responsividade e Centralização */
+  max-width: 800px; /* Limita a largura do texto para melhor leitura */
+  padding: 10px; /* Espaçamento vertical para separar do cabeçalho/rodapé */
+  margin-bottom: 1rem;
+  border-left: 1px solid #1f2937;
+  background-color: #1f293713;
+
+  border-radius: 0 10px 10px 0;
+
+  /* 2. Propriedades de Leitura (Typographic Flow) */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem; /* Aumenta a fonte para melhor legibilidade (18px) */
+  line-height: 1.7; /* Aumenta o espaçamento entre linhas (crucial para leitura) */
+  color: var(--foreground);
+}
+
+/* 3. Ajuste de Margens e Espaçamento dos Elementos Internos */
+/* Garante que os elementos de formatação interna (p, h, ul, blockquote)
+   tenham um espaçamento consistente dentro do <article> */
+article > p,
+article > ul,
+article > ol,
+article > blockquote,
+article > pre {
+  margin-bottom: 1.5rem; /* Mais espaço abaixo dos blocos de texto */
+}
+
+/* 4. Estilo para Linhas Horizontais (HR) */
+article hr {
+  margin: 3rem auto;
+  border: 0;
+  border-top: 1px solid var(--blockquote-border); /* Usa a cor de borda definida */
+}
+
+hr {
+  border-color: #14181d;
+  margin: 1em 0;
+}
+
+/* 5. Responsividade (Telas Menores) */
+@media (max-width: 640px) {
+  article {
+    font-size: 1rem; /* Reduz a fonte em telas móveis */
+    line-height: 1.6;
+    padding: 1rem 1rem; /* Adiciona padding horizontal em telas pequenas */
+  }
 }

@@ -1,28 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import "tailwindcss";
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --primary-link: #3b82f6; /* Azul brilhante para links (Light mode) */
   --code-background: #f3f4f6; /* Fundo cinza claro para código */
   --blockquote-border: #9ca3af; /* Cinza médio para bordas */
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary-link: #60a5fa; /* Azul mais claro para links (Dark mode) */
-    --code-background: #1f2937; /* Fundo cinza escuro para código */
-    --blockquote-border: #4b5563; /* Cinza escuro para bordas */
-  }
 }
 
 /* 1. Define a largura e deixa o fundo do trilho transparente */
@@ -46,15 +27,19 @@
 }
 
 * {
-  transition: 150ms linear;
+  transition: 120ms linear;
   box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: black;
+  color: white;
   font-family: 'Robot Mono', monospace;
   line-height: 1.6; /* Melhora a leitura do texto */
+}
+
+html {
+  background-color: black;
 }
 
 /* --- 1. Cabeçalhos --- */

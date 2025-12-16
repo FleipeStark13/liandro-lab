@@ -31,8 +31,8 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-max flex-col items-center justify-center py-32 gap-2 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="flex min-h-screen items-center justify-center font-sans">
+      <main className="flex min-h-screen w-max flex-col items-center justify-center py-32 gap-2 px-16sm:items-start">
 
         {posts.length > 0 ? posts.map((postagem: IPost, key: number) => (
           <Post post={postagem} key={key}/>
